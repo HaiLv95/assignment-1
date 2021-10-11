@@ -2,12 +2,21 @@
   "users": [
     {
       "email": "hai95.lv@gmail.com",
-      "password": "$2a$10$H9dQ2OSy87/ct51oK90xQ.usT4ucYWuXuqhBSb6.qrMUuPArLP2LG",
+      "password": "$2a$10$PQhNADq/MIGtjT0gO0XhvuypgAEiRrw7ETud6y2s8yk48xXhZEjt.",
       "fullname": "Lê Văn Hai",
       "phone": "0333103855",
       "avatar": "https://scontent.fhan3-4.fna.fbcdn.net/v/t1.6435-9/s851x315/180191884_3927415184039298_6104425013245160017_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=da31f3&_nc_ohc=79BIQexUeeQAX_bbyPf&_nc_ht=scontent.fhan3-4.fna&oh=5fceb0a57b89915b4ae0596d891205eb&oe=61865175",
-      "gender": "true",
-      "id": "7028443576076278"
+      "gender": "false",
+      "id": "7323667321989111"
+    },
+    {
+      "email": "nhocyeuviai1995@gmail.com",
+      "password": "$2a$10$hIYxJMubhwKk48YS9t1FhOTq/6vIzwzB1Cz1tVgAWFP7vqVvNbXUS",
+      "fullname": "Lê Văn Hai",
+      "phone": "0333103855",
+      "avatar": "https://scontent.fhan3-4.fna.fbcdn.net/v/t1.6435-9/s851x315/180191884_3927415184039298_6104425013245160017_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=da31f3&_nc_ohc=79BIQexUeeQAX_bbyPf&_nc_ht=scontent.fhan3-4.fna&oh=5fceb0a57b89915b4ae0596d891205eb&oe=61865175",
+      "gender": "false",
+      "id": "7702814748687461"
     }
   ],
   "product": [
