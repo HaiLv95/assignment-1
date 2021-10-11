@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import Routes from "./Routes";
+import { useEffect, useState } from "react";
+import { getAll } from "./api/call-api";
 
 function App() {
+const [user, setUser] = useState("");
+const [products, setProducts] = useState([]);
+useEffect(() => {
+  try {
+   getAll().then(response => setProducts(response.data))
+  } catch (error) {
+    console.log("failed: ", error)
+  }
+}, [])
+// delete product
+const onHandleDelete = (id) =>{
+  const resultDelete = products.filter(product => product.id !== id);
+ setProducts(resultDelete)
+}
+const onHandleEdit =(product) =>{
+  const productsUpdate = products.map(item =>
+    item.id === product.id ? product : item
+  );
+setProducts(productsUpdate);
+}
+const onHandleAdd = (product) =>{
+  setProducts([...products, product]);
+}
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes products = {products}
+                  onDelete = {onHandleDelete}
+                  onEdit = {onHandleEdit}
+                  onAdd = {onHandleAdd}
+      />
     </div>
   );
 }

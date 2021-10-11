@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "email": "hai95.lv@gmail.com",
+      "password": "$2a$10$H9dQ2OSy87/ct51oK90xQ.usT4ucYWuXuqhBSb6.qrMUuPArLP2LG",
+      "fullname": "Lê Văn Hai",
+      "phone": "0333103855",
+      "avatar": "https://scontent.fhan3-4.fna.fbcdn.net/v/t1.6435-9/s851x315/180191884_3927415184039298_6104425013245160017_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=da31f3&_nc_ohc=79BIQexUeeQAX_bbyPf&_nc_ht=scontent.fhan3-4.fna&oh=5fceb0a57b89915b4ae0596d891205eb&oe=61865175",
+      "gender": "true",
+      "id": "7028443576076278"
+    }
+  ],
+  "product": [
+    {
+      "name": "Hello",
+      "img": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/ae513652-2558-4728-ae27-9b1f7b7cffea/retro-gts-shoe-rHcd47.png",
+      "price": "199",
+      "description": "The radiance lives on in the Nike Air Force 1 '07, the b-ball OG that puts a fresh spin on what you know best: crisp leather, clean colourways and the perfect amount of flash to make you shine. This clean, pure white finish adds the gum-sole contrast for a fresh, versatile look with just the right amount of pop.",
+      "id": "2"
+    },
+    {
+      "name": "Hello",
+      "img": "http://placeimg.com/640/480/fashion",
+      "price": "199",
+      "description": "description 4",
+      "id": "4"
+    },
+    {
+      "name": "Unbranded Steel Shoes",
+      "img": "http://placeimg.com/640/480/fashion",
+      "price": 67,
+      "description": "description 5",
+      "id": "5"
+    }
+  ]
+}
