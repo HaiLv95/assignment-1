@@ -86,11 +86,11 @@ export default function AddProduct(props) {
                                                 type="text"
                                                 className="form-control"
                                                 placeholder="productname"
-                                                defaultValue={product.img}
-                                                {...register("img", { required: true })}
+                                                defaultValue={product.photo}
+                                                {...register("photo", { required: true })}
                                             />
                                         </div>
-                                        {errors.img && <span>you must input product image</span>}
+                                        {errors.photo && <span>you must input product image</span>}
                                     </div>
 
                                     <div className="col-12">

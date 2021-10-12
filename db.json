@@ -40,6 +40,13 @@
       "price": 67,
       "description": "description 5",
       "id": "5"
+    },
+    {
+      "name": "Nike Air Zoom Pegasus 38",
+      "photo": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/1206ade0-929c-40bd-a2fb-318bdb85f29c/air-zoom-pegasus-38-road-running-shoes-fdlkXG.png",
+      "price": "180",
+      "description": "Your workhorse with wings returns.The Nike Air Zoom Pegasus 38 has that extra bounce for long, short or everyday runs.It's cool and breathable with a wider fit at the toes and plenty of cushioned support that will make you feel like you're flying on the road.Bold colours nod to the world coming together to celebrate sport.",
+      "id": 7909170559890506
     }
   ]
 }
