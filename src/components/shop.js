@@ -26,7 +26,7 @@ function Shop(props) {
                         <div className="card rounded-0">
                           <img
                             className="card-img rounded-0 img-fluid"
-                            src={item.img}
+                            src={item.photo}
                           />
                           <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                             <ul className="list-unstyled">

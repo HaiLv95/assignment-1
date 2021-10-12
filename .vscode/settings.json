@@ -1,0 +1,6 @@
+{
+        "prettier.tabWidth": 8,
+        "editor.autoClosingBrackets": "always",
+        "editor.lineHeight": 1.5,
+        "editor.detectIndentation": false
+}
