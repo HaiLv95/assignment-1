@@ -9,35 +9,39 @@ import Shop from "./components/shop";
 import Shopsingle from "./components/shop-single";
 import Signin from "./components/Signin";
 import Signup from "./components/signup";
+import Profile from './components/profile';
 
-export default function Routes(props) {
+export default function Routes() {
     return (
         <Router>
             <Navbar />
             <Switch>
                 <Route path="/" exact>
-                    <Home {...props} />
+                    <Home />
                 </Route>
                 <Route path="/shop" exact>
-                    <Shop {...props} />
+                    <Shop  />
                 </Route>
                 <Route path="/about" exact>
-                    <About {...props} />
+                    <About />
                 </Route>
-                <Route path="/shop-single/:id" exact>
-                    <Shopsingle {...props} />
+                <Route path="/shop/shop-single/:id" exact>
+                    <Shopsingle />
                 </Route>
                 <Route path="/signin" exact>
-                    <Signin {...props} />
+                    <Signin />
                 </Route>
                 <Route path="/signup" exact>
-                    <Signup {...props} />
+                    <Signup/>
                 </Route>
-                <Route path="/add">
-                    <AddProduct {...props} />
+                <Route path="/shop/add">
+                    <AddProduct />
                 </Route>
-                <Route path="/edit/:id">
-                    <AddProduct {...props} />
+                <Route path="/shop/edit/:id">
+                    <AddProduct />
+                </Route>
+                <Route path="/profile">
+                    <Profile/>
                 </Route>
             </Switch>
             <Footer />

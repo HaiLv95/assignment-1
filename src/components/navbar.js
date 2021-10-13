@@ -1,7 +1,14 @@
 import React from 'react';
 import { Link, NavLink } from "react-router-dom";
+import { useForm } from 'react-hook-form';
+import { useSelector } from 'react-redux';
 
 export default function Navbar() {
+    const {register, handleSubmit, formState : {errors}} = useForm();
+    const user = useSelector(user => user.user);
+    const onSubmit =(data) => {
+      
+    }
     return (
         <div>
             {/* Header */}
@@ -12,16 +19,6 @@ export default function Navbar() {
                         to="/">
                         Mr.Double
                     </NavLink>
-                    <button
-                        className="navbar-toggler border-0"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#templatemo_main_nav"
-                        aria-controls="navbarSupportedContent"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon" />
-                    </button>
                     <div
                         className="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
                         id="templatemo_main_nav">
@@ -45,24 +42,31 @@ export default function Navbar() {
                             </ul>
                         </div>
                         <div className="navbar align-self-center d-flex">
-                            <form className="d-flex">
+                            <form className="d-flex" onSubmit={handleSubmit(onSubmit)}>
                                 <input
                                     className="form-control me-2"
                                     type="search"
                                     placeholder="id"
-                                    aria-label="Search" />
+                                    aria-label="Search"
+                                    {...register("id")} />
                                 <button className="btn btn-outline-success" type="submit">
                                     Search
                                 </button>
                             </form>
                         </div>
                         <div
-                            className="navbar align-self-center d-flex"
+                            className="nav-profile-image"
                             style={{ marginLeft: 30 }}>
-
-                            <Link to="/signin" class="btn btn-outline-primary">
+                            {user.status ? 
+                                <Link className='nav-link flex-column' to="/profile">
+                                    <div className='nav-profile-image'>
+                                        <img src={user.user.avatar} alt='profile' style={{width: 50, height: 50, borderRadius: 25}}></img>
+                                    </div>
+                                </Link>
+                                 : 
+                                <Link to="/signin" class="btn btn-primary" style={{ color: 'white' }}>
                                 Sign-In
-                            </Link>
+                            </Link>}
                         </div>
                     </div>
                 </div>

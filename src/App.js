@@ -3,43 +3,25 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Routes from "./Routes";
 import { useEffect, useState } from "react";
 import { getAll } from "./api/call-api";
+import { useDispatch} from "react-redux";
+import { actionType } from "./reducer/actiontype";
 
 function App() {
-    const [products, setProducts] = useState([]);
-    const [user, setUser] = useState("");
-
+    const dispatch = useDispatch();
     useEffect(() => {
         try {
             getAll().then(response => {
-                setProducts(response.data);
+                //truyền dữ liệu product về reducer
+               dispatch({type: actionType.GETALL_PRODUCT, payload : response.data});
             });
         } catch (error) {
             console.log("failed: ", error);
         }
     }, []);
-
-    // delete product
-    const onHandleDelete = id => {
-        const resultDelete = products.filter(product => product.id !== id);
-        setProducts(resultDelete);
-    };
-    const onHandleEdit = product => {
-        const productsUpdate = products.map(item =>
-            item.id === product.id ? product : item
-        );
-        setProducts(productsUpdate);
-    };
-    const onHandleAdd = product => {
-        setProducts([...products, product]);
-    };
+    
     return (
         <div className="App">
-            <Routes
-                products={products}
-                onDelete={onHandleDelete}
-                onEdit={onHandleEdit}
-                onAdd={onHandleAdd}
-            />
+            <Routes />
         </div>
     );
 }

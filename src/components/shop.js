@@ -1,6 +1,10 @@
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
 
 function Shop(props) {
+    //products <=> products : productReducer
+    //dùng useSeclector để gọi ra rootReducer (products : productReducer ). sau đó lấy products trong initialState
+    const result = useSelector(products => products.products);
     return (
       <div>
         {/* Modal */}
@@ -10,7 +14,7 @@ function Shop(props) {
             <h1 className="h2">Shoes</h1>
             <div className="btn-toolbar mb-2 mb-md-0">
               <div className="btn-group me-2">
-                <Link role="button" className="btn btn-success" to="/add">
+                <Link role="button" className="btn btn-success" to="/shop/add">
                   Create
                 </Link>
               </div>
@@ -19,8 +23,8 @@ function Shop(props) {
           <div className="row">
             <div className="col-lg-9">
               <div className="row">
-                {props.products &&
-                  props.products.map(item => (
+                {result.products &&
+                  result.products.map(item => (
                     <div className="col-md-4">
                       <div className="card mb-4 product-wap rounded-0">
                         <div className="card rounded-0">
@@ -34,7 +38,7 @@ function Shop(props) {
                               <li>
                                 <Link
                                   className="btn btn-success text-white mt-2"
-                                  to={"/shop-single/" + item.id}>
+                                  to={"/shop/shop-single/" + item.id}>
                                   <i className="far fa-eye" />
                                 </Link>
                               </li>
@@ -43,7 +47,7 @@ function Shop(props) {
                         </div>
                         <div className="card-body">
                           <Link
-                            to={"/shop-single/" + item.id}
+                            to={"/shop/shop-single/" + item.id}
                             className="h3 text-decoration-none">
                             {item.name}
                           </Link>

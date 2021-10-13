@@ -2,19 +2,21 @@ import { Link } from 'react-router-dom';
 import { useParams, useHistory } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { get, remove } from '../api/call-api';
+import { useDispatch } from 'react-redux';
+import { actionType } from '../reducer/actiontype';
 
 function Shopsingle(props) {
     const { id } = useParams();
     const history = useHistory();
+    const dispatch = useDispatch();
     const [product, setProduct] = useState("")
     useEffect(() => {
-        console.log("useEffect shop single");
         get(id).then(response => setProduct(response.data))
     }, [])
     //delete product
     const onDelete = (id) => {
         remove(id);
-        props.onDelete(id)
+       dispatch({type: actionType.REMOVE_PRODUCT, payload : id});
         history.push("/shop");
     }
     return (
@@ -56,7 +58,7 @@ function Shopsingle(props) {
                                         <div className="col d-grid">
                                             <Link
                                                 className="btn btn-success btn-lg"
-                                                to={"/edit/" + product.id}>
+                                                to={"/shop/edit/" + product.id}>
                                                 Edit
                                             </Link>
                                         </div>

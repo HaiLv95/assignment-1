@@ -1,5 +1,5 @@
 import "../styles/signup.css";
-import { useHistory, useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 import { signup } from "../api/auth";
@@ -16,8 +16,6 @@ export default function Signup(props) {
     //nếu có id thì lấy user từ mảng users gán vào userEdit. nếu có id thì userEdit
     //lưu dữ liệu vào server và chuyển về list user
     const onSubmit = async user => {
-        user.id = Math.random().toString(10).substring(2);
-        console.log(user)
         try {
             await signup(user);
             toast.success("Register success");
@@ -33,7 +31,6 @@ export default function Signup(props) {
     });
     const onChangeStatus = () => {
         setPassStatus({ ...passStatus, status: !passStatus.status });
-        console.log(passStatus);
     };
     return (
         <div style={{ marginTop: 40, marginBottom: 40 }}>
@@ -191,10 +188,19 @@ export default function Signup(props) {
                                     </div>
                                 </div>
                                 <hr className="my-4" />
-                                <button className="w-50 btn btn-primary btn-lg" type="submit">
-                                    Register
-                                </button>
+                                <div className="custom-signin">
+                                    <button className="w-50 btn btn-primary btn-lg" type="submit">
+                                        Register
+                                    </button>
+                                </div>
                             </form>
+                            <div className="custom-signin">
+                                <br />
+                                <br />
+                                <Link to="/signin" className="link-primary">
+                                    You have another account?
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </main>
