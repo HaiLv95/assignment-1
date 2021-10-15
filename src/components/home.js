@@ -1,5 +1,5 @@
 import '../styles/home.css';
-function Home(props) {
+function Home() {
     return (
         <div>
             {/* Modal */}

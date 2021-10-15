@@ -1,10 +1,19 @@
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
-function Shop(props) {
+function Shop() {
     //products <=> products : productReducer
     //dùng useSeclector để gọi ra rootReducer (products : productReducer ). sau đó lấy products trong initialState
     const result = useSelector(products => products.products);
+    const user = useSelector(user => user.user);
+    const history = useHistory()
+    const onHandleClick = () =>{
+        if (user.status) {
+            history.push("/shop/add")
+        } else {
+            history.push("/signin")
+        }
+    }
     return (
       <div>
         {/* Modal */}
@@ -14,9 +23,9 @@ function Shop(props) {
             <h1 className="h2">Shoes</h1>
             <div className="btn-toolbar mb-2 mb-md-0">
               <div className="btn-group me-2">
-                <Link role="button" className="btn btn-success" to="/shop/add">
+                <button className="btn btn-success" onClick={onHandleClick}>
                   Create
-                </Link>
+                </button>
               </div>
             </div>
           </div>
@@ -32,6 +41,7 @@ function Shop(props) {
                             className="card-img rounded-0 img-fluid"
                             src={item.photo}
                             style={{width: 300, height: 300}}
+                            alt=''
                           />
                           <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                             <ul className="list-unstyled">

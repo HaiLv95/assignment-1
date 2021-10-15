@@ -1,13 +1,16 @@
 import React from 'react';
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import { useForm } from 'react-hook-form';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 export default function Navbar() {
-    const {register, handleSubmit, formState : {errors}} = useForm();
-    const user = useSelector(user => user.user);
-    const onSubmit =(data) => {
-      
+    const history = useHistory();
+    const { register, handleSubmit } = useForm();
+    const dispatch = useDispatch()
+    const userReducer = useSelector(user => user.user);
+    const onHandleSignOut = (data) => {
+        dispatch({ type: "LOG_OUT" });
+        history.push("/")
     }
     return (
         <div>
@@ -42,7 +45,7 @@ export default function Navbar() {
                             </ul>
                         </div>
                         <div className="navbar align-self-center d-flex">
-                            <form className="d-flex" onSubmit={handleSubmit(onSubmit)}>
+                            <form className="d-flex" onSubmit={handleSubmit()}>
                                 <input
                                     className="form-control me-2"
                                     type="search"
@@ -57,16 +60,26 @@ export default function Navbar() {
                         <div
                             className="nav-profile-image"
                             style={{ marginLeft: 30 }}>
-                            {user.status ? 
-                                <Link className='nav-link flex-column' to="/profile">
-                                    <div className='nav-profile-image'>
-                                        <img src={user.user.avatar} alt='profile' style={{width: 50, height: 50, borderRadius: 25}}></img>
+                            {userReducer.status ?
+                                <div>
+                                    <div className="btn-group">
+                                        <Link className='nav-link flex-column' to="/profile">
+                                            <div className='nav-profile-image'>
+                                                <img src={userReducer.user.avatar} alt='profile' style={{ width: 50, height: 50, borderRadius: 25 }}></img>
+                                            </div>
+                                        </Link>
+                                        <button type="button" className="btn btn-sm btn-light dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style={{ height: 30, marginTop: 20 }}>
+                                        </button>
+                                        <ul className="dropdown-menu">
+                                            <li><Link className='dropdown-item' to="/profile">Profile</Link></li>
+                                            <li><button className='dropdown-item' onClick={onHandleSignOut}>SignOut</button></li>
+                                        </ul>
                                     </div>
-                                </Link>
-                                 : 
-                                <Link to="/signin" class="btn btn-primary" style={{ color: 'white' }}>
-                                Sign-In
-                            </Link>}
+                                </div>
+                                :
+                                <Link to="/signin" className="btn btn-primary" style={{ color: 'white' }}>
+                                    Sign-In
+                                </Link>}
                         </div>
                     </div>
                 </div>

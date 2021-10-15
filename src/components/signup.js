@@ -1,7 +1,7 @@
 import "../styles/signup.css";
-import { Link, useHistory, useParams } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { signup } from "../api/auth";
 import { ToastContainer, toast } from "react-toastify";
 export default function Signup(props) {
@@ -161,6 +161,18 @@ export default function Signup(props) {
                                             />
                                         </div>
                                         {errors.avatar && <span>you must input your avatar</span>}
+                                    </div>
+                                    <div className="col-12">
+                                        <label htmlFor="productname" className="form-label">
+                                            Introduce for You
+                                        </label>
+                                        <div className="input-group has-validation">
+                                            <textarea
+                                                className="form-control"
+                                                rows="3"
+                                                placeholder="Your introduce"
+                                                {...register("introduce")}></textarea>
+                                        </div>
                                     </div>
                                     <div className="col-12">
                                         <label htmlFor="address" className="form-label">

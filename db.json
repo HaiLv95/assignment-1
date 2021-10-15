@@ -2,19 +2,33 @@
   "users": [
     {
       "email": "hai95.lv@gmail.com",
-      "password": "$2a$10$PQhNADq/MIGtjT0gO0XhvuypgAEiRrw7ETud6y2s8yk48xXhZEjt.",
+      "password": "$2a$10$fFTBzjTbqgdL4L88NSM4beVAbbI5DE3tNK1Zw7W.RNl8o6t0AyDlq",
       "fullname": "Lê Văn Hai",
       "phone": "0333103855",
-      "avatar": "https://scontent.fhan3-4.fna.fbcdn.net/v/t1.6435-9/s851x315/180191884_3927415184039298_6104425013245160017_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=da31f3&_nc_ohc=79BIQexUeeQAX_bbyPf&_nc_ht=scontent.fhan3-4.fna&oh=5fceb0a57b89915b4ae0596d891205eb&oe=61865175",
-      "gender": "false"
+      "avatar": "https://scontent.fhan3-4.fna.fbcdn.net/v/t1.6435-9/180191884_3927415184039298_6104425013245160017_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=oy3r4mICXqUAX9Eon1p&_nc_ht=scontent.fhan3-4.fna&oh=22461ff785741a5340be1000bd331daf&oe=618E9FFC",
+      "introduce": "",
+      "gender": "false",
+      "id": 1
     },
     {
       "email": "nhocyeuviai1995@gmail.com",
-      "password": "$2a$10$hIYxJMubhwKk48YS9t1FhOTq/6vIzwzB1Cz1tVgAWFP7vqVvNbXUS",
+      "password": "$2a$10$.6wD11oaeDGazVmeZl6gF.cCftvdo/nGATRhVPHZcNwEMt8G6SsyS",
       "fullname": "Lê Văn Hai",
       "phone": "0333103855",
       "avatar": "https://scontent.fhan3-4.fna.fbcdn.net/v/t1.6435-9/s851x315/180191884_3927415184039298_6104425013245160017_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=da31f3&_nc_ohc=79BIQexUeeQAX_bbyPf&_nc_ht=scontent.fhan3-4.fna&oh=5fceb0a57b89915b4ae0596d891205eb&oe=61865175",
-      "gender": "false"
+      "introduce": "",
+      "gender": "true",
+      "id": 2
+    },
+    {
+      "email": "harvickayme1985@hotmail.com",
+      "password": "$2a$10$nt3JzEpFsIVr73MJ2nwEGuZZK7l.CfggHpwUP7fn9aVUrvMt2BD0e",
+      "fullname": "Lê Văn Hai",
+      "phone": "0333103855",
+      "avatar": "https://scontent.fhan3-4.fna.fbcdn.net/v/t1.6435-9/s851x315/180191884_3927415184039298_6104425013245160017_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=da31f3&_nc_ohc=79BIQexUeeQAX_bbyPf&_nc_ht=scontent.fhan3-4.fna&oh=5fceb0a57b89915b4ae0596d891205eb&oe=61865175",
+      "introduce": "",
+      "gender": "false",
+      "id": 3
     }
   ],
   "product": [
@@ -31,20 +45,6 @@
       "price": "120",
       "description": "Your workhorse with wings returns.The Nike Air Zoom Pegasus 38 has that extra bounce for long, short or everyday runs.It's cool and breathable with a wider fit at the toes and plenty of cushioned support that will make you feel like you're flying on the road.Bold colours nod to the world coming together to celebrate sport.",
       "id": "2"
-    },
-    {
-      "name": "Nike Air Force 1 '07",
-      "photo": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/ce466524-f10a-48e0-b8d6-36fbc1b854bf/air-force-1-07-shoe-tnM0q0.png",
-      "price": "111",
-      "description": "The radiance lives on in the Nike Air Force 1 '07, the b-ball OG that puts a fresh spin on what you know best: crisp leather, clean colourways and the perfect amount of flash to make you shine. This clean, pure white finish adds the gum-sole contrast for a fresh, versatile look with just the right amount of pop.",
-      "id": "3"
-    },
-    {
-      "name": "Nike Retro GTS",
-      "photo": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fc31fd45-b167-4037-a844-9c3d8c608173/retro-gts-shoe-rHcd47.png",
-      "price": "99",
-      "description": "There's no need for frills when you're classic.The Nike Retro GTS is just that—a classically simple, always stylish canvas shoe.Nodding to the '96 original that gave a generation of skaters their don't-care attitude, the new design gets updated with a comfort insole, embroidered logos and metal eyelets.Featuring a canvas upper and tough rubber sole with heritage herringbone traction pattern, it lets you turn heads without trying.",
-      "id": "4"
     }
   ]
 }

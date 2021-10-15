@@ -1,23 +1,37 @@
-import { Link } from 'react-router-dom';
 import { useParams, useHistory } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { get, remove } from '../api/call-api';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { actionType } from '../reducer/actiontype';
 
-function Shopsingle(props) {
+function Shopsingle() {
     const { id } = useParams();
     const history = useHistory();
-    const dispatch = useDispatch();
     const [product, setProduct] = useState("")
     useEffect(() => {
         get(id).then(response => setProduct(response.data))
     }, [])
-    //delete product
-    const onDelete = (id) => {
-        remove(id);
-       dispatch({type: actionType.REMOVE_PRODUCT, payload : id});
-        history.push("/shop");
+
+    const dispatch = useDispatch();
+    const user = useSelector(user => user.user);
+    console.log(user)
+    const onHandleClick = (data) => {
+        if (user.status) {
+            switch (data.type) {
+                case 'delete':
+                    remove(data.id);
+                    dispatch({ type: actionType.REMOVE_PRODUCT, payload: data.id });
+                    history.push("/shop");
+                    break;
+                case 'edit':
+                    history.push("/shop/edit/" + data.id);
+                    break;
+                default:
+                    break;
+            }
+        } else {
+            history.push("/signin")
+        }
     }
     return (
         <div>
@@ -32,6 +46,7 @@ function Shopsingle(props) {
                                 <img
                                     className="card-img img-fluid"
                                     src={product.photo}
+                                    alt=''
                                 />
                             </div>
                         </div>
@@ -56,11 +71,11 @@ function Shopsingle(props) {
                                     <p>{product.description}  </p>
                                     <div className="row pb-3">
                                         <div className="col d-grid">
-                                            <Link
+                                            <button
                                                 className="btn btn-success btn-lg"
-                                                to={"/shop/edit/" + product.id}>
+                                                onClick={() => onHandleClick({ type: 'edit', id: product.id })}>
                                                 Edit
-                                            </Link>
+                                            </button>
                                         </div>
                                         <div className="col d-grid">
                                             <button
@@ -68,7 +83,7 @@ function Shopsingle(props) {
                                                 className="btn btn-danger btn-lg"
                                                 name="submit"
                                                 value="addtocard"
-                                                onClick={() => onDelete(product.id)}>
+                                                onClick={() => onHandleClick({ type: 'delete', id: product.id })}>
                                                 Delete
                                             </button>
                                         </div>

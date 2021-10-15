@@ -1,5 +1,5 @@
 import "../styles/addproduct.css";
-import { useHistory, useParams, Link } from "react-router-dom";
+import { useHistory, useParams,} from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 import { add, get, update } from "../api/call-api";
@@ -14,7 +14,6 @@ export default function AddProduct() {
         formState: { errors },
     } = useForm();
     //call useDispatch
-    const dispatch = useDispatch();
     //lấy id nếu edit profile của product
     const { id } = useParams();
 
@@ -30,6 +29,7 @@ export default function AddProduct() {
             }
         }
     }, []);
+    const dispatch = useDispatch();
     const onSubmit = async product => {
         if (id != undefined) {
             //vì dữ liệu lấy từ form là 1 obj nhưng không có trường id nên phải gán id cho obj để cập nhật
@@ -52,7 +52,9 @@ export default function AddProduct() {
             }
         }
     };
-
+const onHandleCancel =() =>{
+    history.goBack();
+}
     return (
         <div>
             <div className="container">
@@ -130,11 +132,12 @@ export default function AddProduct() {
                                     </div>
                                 </div>
                                 <hr className="my-4" />
-                                <Link
+                                <button
                                     className="w-30 btn btn-danger btn-lg"
-                                    to={"/shop-single/" + product.id} style={{ marginLeft: 60 }}>
+                                    style={{ marginLeft: 60 }}
+                                    onClick={onHandleCancel}>
                                     Cancel
-                                </Link>
+                                </button>
                                 <button className="w-50 btn btn-primary btn-lg" type="submit" style={{ marginLeft: 80 }}>
                                     Confirm
                                 </button>

@@ -34,13 +34,13 @@ export default function Routes() {
                 <Route path="/signup" exact>
                     <Signup/>
                 </Route>
-                <Route path="/shop/add">
+                <Route path="/shop/add" exact>
                     <AddProduct />
                 </Route>
-                <Route path="/shop/edit/:id">
+                <Route path="/shop/edit/:id" exact>
                     <AddProduct />
                 </Route>
-                <Route path="/profile">
+                <Route path="/profile" exact>
                     <Profile/>
                 </Route>
             </Switch>
