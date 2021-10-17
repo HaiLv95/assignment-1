@@ -1,13 +1,11 @@
 import React from 'react';
 import { Link, NavLink, useHistory } from "react-router-dom";
-import { useForm } from 'react-hook-form';
 import { useSelector, useDispatch } from 'react-redux';
 
 export default function Navbar() {
     const history = useHistory();
-    const { register, handleSubmit } = useForm();
     const dispatch = useDispatch()
-    const userReducer = useSelector(user => user.user);
+    const userReducer = useSelector(state => state.user);
     const onHandleSignOut = (data) => {
         dispatch({ type: "LOG_OUT" });
         history.push("/")
@@ -44,19 +42,7 @@ export default function Navbar() {
                                 </li>
                             </ul>
                         </div>
-                        <div className="navbar align-self-center d-flex">
-                            <form className="d-flex" onSubmit={handleSubmit()}>
-                                <input
-                                    className="form-control me-2"
-                                    type="search"
-                                    placeholder="id"
-                                    aria-label="Search"
-                                    {...register("id")} />
-                                <button className="btn btn-outline-success" type="submit">
-                                    Search
-                                </button>
-                            </form>
-                        </div>
+                        
                         <div
                             className="nav-profile-image"
                             style={{ marginLeft: 30 }}>

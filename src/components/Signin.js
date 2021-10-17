@@ -16,6 +16,7 @@ const Signin = () => {
         try {
             // call api
             const result = await signin(data);
+            console.log(result)
             // trả về dữ liệu user và lưu vào localStorage
             localStorage.setItem("info", JSON.stringify(result.data));
             // Hiển thị thông báo thành công
@@ -23,7 +24,8 @@ const Signin = () => {
             dispatch({type: "LOG_IN", payload: result.data.user})
             setTimeout(() => history.goBack(), 3000);
         } catch (error) {
-            toast.error(error.response.data);
+            // toast.error(error.response.data);
+            alert(error.response.data);
         }
     };
     return (

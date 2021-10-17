@@ -42,17 +42,7 @@ export default function Signup(props) {
                             <form
                                 className="needs-validation"
                                 onSubmit={handleSubmit(onSubmit)}>
-                                <ToastContainer
-                                    position="top-right"
-                                    autoClose={5000}
-                                    hideProgressBar={false}
-                                    newestOnTop={false}
-                                    closeOnClick
-                                    rtl={false}
-                                    pauseOnFocusLoss
-                                    draggable
-                                    pauseOnHover
-                                />
+                                <ToastContainer />
                                 <div className="row g-3">
                                     <div className="col-12">
                                         <label htmlFor="username" className="form-label">
