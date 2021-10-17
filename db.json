@@ -9,6 +9,26 @@
       "introduce": "",
       "gender": "false",
       "id": 1
+    },
+    {
+      "email": "harvickayme1985@hotmail.com",
+      "password": "$2a$10$ilY/9j6wvWvLbbxZuts4U.7sAoMuxH0maR/W1ojf5Hy5GnkL7CqWy",
+      "fullname": "Lê Văn Hai",
+      "phone": "0333103855",
+      "avatar": "https://scontent.fhan3-4.fna.fbcdn.net/v/t1.6435-9/s851x315/180191884_3927415184039298_6104425013245160017_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=da31f3&_nc_ohc=79BIQexUeeQAX_bbyPf&_nc_ht=scontent.fhan3-4.fna&oh=5fceb0a57b89915b4ae0596d891205eb&oe=61865175",
+      "introduce": "",
+      "gender": "true",
+      "id": 2
+    },
+    {
+      "email": "cuongdv@gmail.com",
+      "password": "$2a$10$coNhEduHd1o9f8d7bI2ECebuV8AYlRZSJWPZNwyOwWNPYgfLhosqK",
+      "fullname": "Đỗ Văn Cường",
+      "phone": "0333103855",
+      "avatar": "https://scontent.fhan3-1.fna.fbcdn.net/v/l/t1.6435-9/p960x960/240860783_3072687476389149_4136721012953699288_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=e3f864&_nc_ohc=IMolIE6bgbgAX92bDoV&_nc_ht=scontent.fhan3-1.fna&oh=40a1063dcddd21b5a2716b8921f67e1b&oe=61901290",
+      "introduce": "Ông thần bàn phím. Châm ngôn: \"Khói thuốc tàn đốt cháy đời trai trẻ\"",
+      "gender": "true",
+      "id": 3
     }
   ],
   "product": [

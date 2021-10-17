@@ -7,9 +7,9 @@ export const get = (id) => {
     const url = `/product/${id}`;
     return instance.get(url);
 }
-export const update = (user) => {
-    const url = `/product/${user.id}`;
-    return instance.put(url, user);
+export const update = (product) => {
+    const url = `/product/${product.id}`;
+    return instance.put(url, product);
 }
 export const add = (user) => {
     const url = `/product/`;
